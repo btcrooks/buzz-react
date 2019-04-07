@@ -13,9 +13,7 @@ export default class LetterView extends Component {
   render() {
     return (
       <div style={styles.wrapper}>
-        Text view goes here
-        <br />
-        <input type="button" value="Click Me!" />
+        <p>{this.props.display}</p>
       </div>
     )
   }

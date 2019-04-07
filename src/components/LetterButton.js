@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import primaryLetterButton from '../images/primaryLetterButton.svg';
 import secondaryLetterButton from '../images/secondaryLetterButton.svg';
 
@@ -15,10 +15,12 @@ export default class LetterButton extends Component {
     super();
     this.handleClick = this.handleClick.bind(this, 'Parameter');
   }
+
   handleClick = (param, e) => {
     // console.log('Parameter', param);
     // console.log('Event', e);
-    console.log(this.props.letter);
+    // console.log(this.props.letter);
+    this.props.callBack(this.props.letter);
   }
 
   render() {
@@ -26,7 +28,7 @@ export default class LetterButton extends Component {
       return(
         <input
           type='button'
-          value={this.props.letter.toUpperCase()}
+          value={this.props.letter}
           onClick={this.handleClick}
           style={{
             position: 'absolute',
@@ -38,6 +40,7 @@ export default class LetterButton extends Component {
             color: '#000',
             fontSize: '40px',
             fontWeight: '600',
+            textTransform: 'uppercase',
             textAlign: 'center',
             border: 'none',
             outline: '0',
@@ -52,7 +55,7 @@ export default class LetterButton extends Component {
       return(
         <input
           type='button'
-          value={this.props.letter.toUpperCase()}
+          value={this.props.letter}
           onClick={this.handleClick}
           style={{
             position: 'absolute',
@@ -64,6 +67,7 @@ export default class LetterButton extends Component {
             color: '#000',
             fontSize: '40px',
             fontWeight: '600',
+            textTransform: 'uppercase',
             textAlign: 'center',
             border: 'none',
             outline: '0',
